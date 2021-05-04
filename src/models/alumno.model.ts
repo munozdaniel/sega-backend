@@ -60,7 +60,7 @@ export class Alumno extends Entity {
 
   @property({
     type: 'string',
-    default: MASCULINO,
+    default: 'MASCULINO',
   })
   sexo?: string;
 
