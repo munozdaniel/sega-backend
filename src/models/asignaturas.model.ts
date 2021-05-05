@@ -1,7 +1,7 @@
 import {Entity, model, property} from '@loopback/repository';
 
-@model({settings: {strict: false}})
-export class Asignatura extends Entity {
+@model({name: 'asignaturas', settings: {strict: false}})
+export class Asignaturas extends Entity {
   @property({
     type: 'string',
     id: true,
@@ -71,19 +71,20 @@ export class Asignatura extends Entity {
     type: 'boolean',
   })
   activo?: boolean;
+
   // Define well-known properties here
 
   // Indexer property to allow additional data
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [prop: string]: any;
 
-  constructor(data?: Partial<Asignatura>) {
+  constructor(data?: Partial<Asignaturas>) {
     super(data);
   }
 }
 
-export interface AsignaturaRelations {
+export interface AsignaturasRelations {
   // describe navigational properties here
 }
 
-export type AsignaturaWithRelations = Asignatura & AsignaturaRelations;
+export type AsignaturasWithRelations = Asignaturas & AsignaturasRelations;
