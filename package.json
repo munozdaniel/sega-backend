@@ -12,6 +12,7 @@
     "node": ">=10.16"
   },
   "scripts": {
+    "dev": "nodemon server.js",
     "build": "lb-tsc",
     "build:watch": "lb-tsc --watch",
     "lint": "npm run eslint && npm run prettier:check",
@@ -32,9 +33,20 @@
     "preopenapi-spec": "npm run build",
     "openapi-spec": "node ./dist/openapi-spec",
     "prestart": "npm run rebuild",
-    "start": "node -r source-map-support/register .",
+    "start": "node -r  source-map-support/register .",
     "clean": "lb-clean dist *.tsbuildinfo .eslintcache",
     "rebuild": "npm run clean && npm run build"
+  },
+  "nodemonConfig": {
+    "verbose": true,
+    "watch": [
+      "src/"
+    ],
+    "ignore": [
+      "dist/*"
+    ],
+    "ext": "ts",
+    "exec": "npm start"
   },
   "repository": {
     "type": "git",
@@ -56,6 +68,7 @@
     "@loopback/rest-explorer": "^3.3.0",
     "@loopback/service-proxy": "^3.2.0",
     "loopback-connector-mongodb": "^5.5.0",
+    "nodemon": "^2.0.7",
     "tslib": "^2.0.0"
   },
   "devDependencies": {
