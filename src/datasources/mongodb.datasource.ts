@@ -4,10 +4,10 @@ import {juggler} from '@loopback/repository';
 const config = {
   name: 'mongodb',
   connector: 'mongodb',
-  url: 'mongodb://adminSega:system2021cet30@127.0.0.1:27017/escuelacet30',
+  url: 'mongodb://sega:system2021cet30@127.0.0.1:27017/escuelacet30',
   host: '127.0.0.1',
   port: 27017,
-  user: 'adminSega',
+  user: 'sega',
   password: 'system2021cet30',
   database: 'escuelacet30',
   useNewUrlParser: true,
